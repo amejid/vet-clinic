@@ -1,4 +1,4 @@
-# curriculum-databases-projects-template
+# Vet Clinic
 
 > This project implements a database to track animal data.
 
