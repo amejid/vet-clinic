@@ -68,7 +68,7 @@ INNER JOIN vets
 ON visits.vet_id = vets.id
 INNER JOIN animals
 ON visits.animal_id = animals.id
-WHERE vet_id = 1
+WHERE vets.name = 'William Tatcher'
 ORDER BY date_of_visit DESC
 LIMIT 1;
 
