@@ -31,4 +31,15 @@ CREATE TABLE vets (
 	name VARCHAR(100),
 	age INTEGER,
 	date_of_graduation DATE
-)
+);
+
+CREATE TABLE specializations (
+	vet_id INTEGER REFERENCES vets(id),
+	species_id INTEGER REFERENCES species(id)
+);
+
+CREATE TABLE visits (
+	vet_id INTEGER REFERENCES vets(id),
+	animal_id INTEGER REFERENCES animals(id),
+	date_of_visit DATE
+);
