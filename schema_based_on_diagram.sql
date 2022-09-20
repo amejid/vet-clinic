@@ -19,3 +19,22 @@ CREATE TABLE medical_histories (
 	patient_id INTEGER REFERENCES patients(id),
 	status VARCHAR(100)
 );
+
+-- Invoices table
+CREATE TABLE invoices (
+	id SERIAL PRIMARY KEY,
+	total_amount DECIMAL,
+	generated_at TIMESTAMP,
+	payed_at TIMESTAMP,
+	medical_history_id INTEGER REFERENCES medical_histories(id)
+);
+
+-- invoice_items table
+CREATE TABLE invoice_items (
+	id SERIAL PRIMARY KEY,
+	unit_price DECIMAL,
+	quantity DECIMAL,
+	total_price DECIMAL,
+	invoice_id INTEGER REFERENCES invoices(id),
+	treatment_id INTEGER REFERENCES treatments(id)
+);
