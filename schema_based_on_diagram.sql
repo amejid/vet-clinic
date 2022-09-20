@@ -38,3 +38,10 @@ CREATE TABLE invoice_items (
 	invoice_id INTEGER REFERENCES invoices(id),
 	treatment_id INTEGER REFERENCES treatments(id)
 );
+
+-- Many-to-many relationship
+CREATE TABLE medial_treatments (
+	medical_history_id INTEGER REFERENCES medical_histories(id),
+	treatment_id INTEGER REFERENCES treatments(id)
+);
+
