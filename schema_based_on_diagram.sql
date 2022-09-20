@@ -45,3 +45,10 @@ CREATE TABLE medial_treatments (
 	treatment_id INTEGER REFERENCES treatments(id)
 );
 
+-- Indexes
+CREATE INDEX patient_index ON medical_histories(patient_id);
+CREATE INDEX medical_history_index ON invoices(medical_history_id);
+CREATE INDEX invoice_index ON invoice_items(invoice_id);
+CREATE INDEX treatment_index ON invoice_items(treatment_id);
+CREATE INDEX medical_history_index ON medial_treatments(medical_history_id);
+CREATE INDEX treatment_index ON medial_treatments(treatment_id);
